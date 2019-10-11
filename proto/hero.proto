@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+message Hero {
+    int32 id = 1;
+    string name = 2;
+}
+
+message GetHerosReq {
+    // empty
+}
+message GetHerosRes {
+    repeated Hero heros = 1;
+};
+
+message GetHeroReq {
+    int32 id = 1;
+}
+
+message GetHeroRes {
+    Hero hero = 1;
+};
+
+message SaveHeroReq {
+    Hero hero = 1;
+}
+message SaveHeroRes {
+    Hero hero = 1;
+};
+
+message DeleteHeroReq {
+    int32 id = 1;
+}
+message DeleteHeroRes {
+    Hero hero = 1;
+};
+
+service HeroService {
+    rpc getHeroes(GetHerosReq) returns (GetHerosRes);
+    rpc getHero(GetHeroReq) returns (GetHeroRes);
+    rpc save(SaveHeroReq) returns (SaveHeroRes);
+    rpc delete(DeleteHeroReq) returns (DeleteHeroRes);
+}
