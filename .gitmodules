@@ -1,0 +1,6 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/thai2902/tour-of-heros-grpc-server.git
+[submodule "client"]
+	path = client
+	url = https://github.com/thai2902/angular-tour-of-heroes.git
